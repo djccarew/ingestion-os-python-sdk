@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "some-project-name",
+    "private_key_id": "9ab62b750e8dhh8g3k2592e54eff94h7065f9795",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDWL3fz207NYizp\nguPkg2Nn8spABVLKByCMJyNed/cAci0OhKZGCc3FbV4E7yy48B4avrJHwGug6E02\nq+B+oIC/2TU7otnRT6j+9vIKcr7rLQCmnjKfFCSm9fIDD5DhprFz3KcwAZ674MKj\nULQfcpGMA5j5xwV3WeDYvWCuIf/58TG9zkykyj8Gde5hOiEi/mu4dzTCrjHFTWCK\nJvbIVfBugMn708O5VFy6+igY4vkk6DGoAWCauNkPOllaE9PpeHmsbc+Jv66/Fdw5\nSwkwuOBvPc/jvUkyeQlCZLHBy5gKsWsw1aCCEa6ckuaWEwov8s4gXNfcdeuJNa+Q\nWUDAhESPAgMBAAECggEAfVB4liySBoiSTm1OeLyGxKLAwoRa0+knmdisUPFPiutC\ngWQLBJ9nzUMX5zsop2uVsYAxPtnOHu7LfllBl9TAf37OLn4xgs1gywwgwQwxt9c0\nskeMxpY6e5Uaa8AHvH6TBH7tMqFABhySxIrLWDrn/Ut9jWZsRFBJxYXHsxohclIi\nDi9CHxWJnRAr12YxLnac51GtgmCuGseEzf4eT78TehNdYKvScg0iMpKKKvtfm/ZR\n4Ycne8LP/MoEwGsNt7dP62nR9x7sr2UyBPdkKKKaMXIdKZ8ZRRLqqySJphHbLO4U\nCI5J4fAuaHCKAJDzfdbDkfv83S/9B+/CfuV+3E+QQQKBgQDqju1onrYlXGOcsQhP\nWud0s4pxjapR5YzWkbACpBoElJgOkdUFxlKq7O1S1qzHqa+yihhEhtzFmce+35xO\nBxyVhr2kQbDyEAnQn3reTo8Es8r0G+6uwAkjx7aLKnBJ8oXSmPtQX6XNwjctfJ/f\n72i5Y7hLSGe7lAqZhd392aY+4wKBgQDpw8e7Y4zpaqkXyxmseDAZYF/U2+/y6zKu\nd5BZQ2Pnn8CEX6ATlOYbIj99F999VGeQ9QtJPndsmtJ3XvYeuoi0pX1WzirOUhlV\n0/fzjJtkRxcbeaNSJ13KrgOF913cSH/EBo8KUxCz+79RlMG0s7t6GzysB5rbkYY+\nKWgaB7nHZQKBgAxiJ16SooMucYPgRNQLtJSQtgpwtEFGoTzizCwXhdggEDcUs+5u\nHgcwIwdwlgakisYeTFGx3Q4BpG4LWDE2ZufuCS0W2sSs3BfLk60Q8LQK2fgxUVSg\nhtsAvD50qyD8UNxhf0MrCZHnYwpfvgEQnrLK9PvkgrWAh167lpDEYOaJAoGACjrb\nHsQ4gm58f+IPeZC46iNhjjshwQux6BirZHyifpxrHF/i7XhyqXVSOfM1gJKVBa7z\nk3z8VPBhjX/GXYnkOaOUXJwhG25UVYE1NJ9OnZDO3hDwqMO4QwpidRZiMSWrEbUH\nxXflHztBIBzWbUYASlOu0Ah1Km6v5UCCocD8zFECgYBaGrAKav/adnHAh+TTZMj6\nROlKmVk2OpAU73qUP36hx2UGR/yb2ZOfe65WUw5PJGbeLmQcmpuO9ZQRqM+TbQY9\nsQih7UsdmNVr2QKv7P4MnU/BN0TdzHb6zvpMQAX6sWrcgCrtnnZz5bWRAzhpvw1n\ndEL5F8Rp3Iwt0yVmmySb+g==\n-----END PRIVATE KEY-----\n",
+    "client_email": "airflow@some-project-name.iam.gserviceaccount.com",
+    "client_id": "218427503021566943391",
+    "auth_uri": "http://localhost:5000/google_auth",
+    "token_uri": "http://localhost:5000/google_token",
+    "auth_provider_x509_cert_url": "http://localhost:5000/google_auth_cert",
+    "client_x509_cert_url": "http://localhost:5000/google_client_cert"
+}

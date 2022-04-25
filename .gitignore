@@ -1,0 +1,10 @@
+build
+dist
+osdu_api.egg-info
+__pycache__
+
+**/venv/**
+**/.idea/**
+.vscode/
+.DS_Store
+.pytest_cache

@@ -1,0 +1,68 @@
+# Copyright © 2020 Amazon Web Services
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
+version: 0.2
+
+env:
+  variables:
+    # these are needed because unit tests check config parsing and config injects env vars
+    STORAGE_BASE_URL: stub
+    SEARCH_BASE_URL: stub
+    LEGAL_BASE_URL: stub
+    DATA_WORKFLOW_BASE_URL: stub
+    FILE_DMS_BASE_URL: stub
+    DATASET_REGISTRY_BASE_URL: stub
+    SCHEMA_BASE_URL: stub
+    AUTH_TOKEN_URL: stub
+    CUSTOM_SCOPE: stub
+    ENVIRONMENT: stub
+    AWS_REGION: stub
+    CI_COMMIT_TAG: v0.0.8
+
+phases:
+  install:
+    commands:
+      - if [ $(echo $CODEBUILD_SOURCE_VERSION | grep -c  ^refs/heads.*) -eq 1 ]; then echo "Branch name found"; else echo "This build only supports branch builds" && exit 1; fi
+      - apt-get update -y
+  build:
+
+    commands:
+      # install packages
+      - pip install -r requirements.txt
+      
+      # run basic build
+      - python setup.py build
+
+      # run unit tests
+      - cp osdu_api/test/osdu_api.ini osdu_api.ini
+      - rm -r osdu_api/test/providers-unit-tests
+      - rm -r osdu_api/test/libs-unit-tests
+      - python -m unittest discover osdu_api/test
+      - rm osdu_api.ini
+
+      # publish new artifact to code artifact
+      - export AWS_ACCOUNT_ID=`aws sts get-caller-identity | grep Account | cut -d':' -f 2 | cut -d'"' -f 2`
+      - aws codeartifact login --tool twine --domain osdu-dev --domain-owner ${AWS_ACCOUNT_ID} --repository osdu-python
+      - python setup.py sdist bdist_wheel
+      - twine upload --skip-existing --repository codeartifact dist/osdu_api-0.0.8.tar.gz
+
+
+artifacts:
+  files:
+    - "**/*"
+  # base-directory: ${OUTPUT_DIR}
+  name: test
